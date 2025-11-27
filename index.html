@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guia ETIT - Procedimentos Operacionais</title>
+    <title>Guia de processos</title>
     <style>
         * {
             margin: 0;
@@ -12,21 +12,21 @@
         }
 
         :root {
-            --verde-principal: #86c788;
-            --verde-claro: #a8d5a2;
-            --verde-muito-claro: #dff2dd;
-            --verde-hover: #6eb070;
-            --verde-escuro: #4a7c4e;
+            --verde-principal: #2e7d32;
+            --verde-claro: #4caf50;
+            --verde-muito-claro: #e8f5e9;
+            --verde-hover: #1b5e20;
+            --verde-escuro: #1b5e20;
             --texto-escuro: #2d4a2f;
             --texto-medio: #4a5f4c;
             --branco: #ffffff;
             --cinza-claro: #f8faf9;
-            --sombra: rgba(70, 100, 70, 0.1);
+            --sombra: rgba(46, 125, 50, 0.1);
         }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, var(--verde-muito-claro) 0%, var(--branco) 100%);
+            background: linear-gradient(135deg, #f1f8e9, #e8f5e9);
             color: var(--texto-escuro);
             line-height: 1.6;
             min-height: 100vh;
@@ -44,8 +44,8 @@
             margin-bottom: 50px;
             padding: 30px 20px;
             background: var(--branco);
-            border-radius: 20px;
-            box-shadow: 0 4px 20px var(--sombra);
+            border-radius: 12px;
+            box-shadow: 0 4px 12px var(--sombra);
         }
 
         h1 {
@@ -53,6 +53,8 @@
             font-size: 2.5em;
             margin-bottom: 10px;
             font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .subtitle {
@@ -70,14 +72,14 @@
 
         .accordion-item {
             background: var(--branco);
-            border-radius: 16px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 2px 12px var(--sombra);
+            box-shadow: 0 4px 12px var(--sombra);
             transition: all 0.3s ease;
         }
 
         .accordion-item:hover {
-            box-shadow: 0 4px 20px rgba(70, 100, 70, 0.15);
+            box-shadow: 0 6px 16px rgba(46, 125, 50, 0.15);
             transform: translateY(-2px);
         }
 
@@ -96,7 +98,7 @@
         }
 
         .accordion-header:hover {
-            background: var(--verde-claro);
+            background: #c8e6c9;
         }
 
         .accordion-header.active {
@@ -226,8 +228,8 @@
             color: var(--texto-medio);
             font-size: 0.95em;
             background: var(--branco);
-            border-radius: 16px;
-            box-shadow: 0 2px 12px var(--sombra);
+            border-radius: 12px;
+            box-shadow: 0 4px 12px var(--sombra);
         }
 
         @media (max-width: 768px) {
@@ -299,7 +301,7 @@
 <body>
     <div class="container">
         <header>
-            <h1>📋 Guia ETIT</h1>
+            <h1>📋 Guia de processos</h1>
             <p class="subtitle">Procedimentos Operacionais e Diretrizes</p>
         </header>
 
@@ -307,7 +309,7 @@
             <!-- Acordeão 1 -->
             <div class="accordion-item">
                 <button class="accordion-header" aria-expanded="false">
-                    <span class="accordion-title">1. ETIT – Regras de Tempo</span>
+                    <span class="accordion-title">1. ETIT – Regras de tempo</span>
                     <div class="accordion-icon">
                         <svg viewBox="0 0 24 24">
                             <path d="M7 10l5 5 5-5z"/>
@@ -319,7 +321,7 @@
                         <ul>
                             <li><strong>Casos SS:</strong> gerar a tarefa do incidente em até 15 minutos.</li>
                             <li><strong>Casos de degradação:</strong> gerar em até 30 minutos.</li>
-                            <li>Independente de acionamento.</li>
+                            <li>A garantia do etit independe de acionamento, para garantir o etit basta que seja gerado no prazo.</li>
                         </ul>
                     </div>
                 </div>
@@ -328,7 +330,7 @@
             <!-- Acordeão 2 -->
             <div class="accordion-item">
                 <button class="accordion-header" aria-expanded="false">
-                    <span class="accordion-title">2. Abrangência e Evidências dos Tickets</span>
+                    <span class="accordion-title">2. Abrangência e evidências dos incidentes</span>
                     <div class="accordion-icon">
                         <svg viewBox="0 0 24 24">
                             <path d="M7 10l5 5 5-5z"/>
@@ -339,16 +341,16 @@
                     <div class="accordion-content-inner">
                         <h3>Abrangência:</h3>
                         <ul>
-                            <li><strong>Outage HFC:</strong> pelo menos uma abrangência por node (preferencialmente XPT).</li>
-                            <li><strong>Outage GPON:</strong> incluir gráfico do Visium.</li>
+                            <li><strong>Incidentes HFC:</strong> inserir uma eviência por node do xpt.</li>
+                            <li><strong>Incidentes GPON:</strong> incluir gráfico do Visium.</li>
                         </ul>
 
                         <h3>Evidências:</h3>
                         <ul>
-                            <li>Evidências devem ter horário.</li>
-                            <li>Se o sistema estiver fora, inserir print do erro.</li>
+                            <li>As evidências devem ter horário.</li>
+                            <li>Se o sistema estiver inoperante, inserir print do erro.</li>
                             <li><strong>Casos HFC:</strong> obrigatório incluir evidência do IDS.</li>
-                            <li>Qualquer evidência é aceita caso as ferramentas estejam inoperantes.</li>
+                            <li>Qualquer evidência será aceita caso as ferramentas oficais estejam inoperantes.</li>
                             <li>Conferir todas as evidências antes de encerrar.</li>
                         </ul>
                     </div>
@@ -358,7 +360,7 @@
             <!-- Acordeão 3 -->
             <div class="accordion-item">
                 <button class="accordion-header" aria-expanded="false">
-                    <span class="accordion-title">3. Horário de Encerramento</span>
+                    <span class="accordion-title">3. Horário de encerramento</span>
                     <div class="accordion-icon">
                         <svg viewBox="0 0 24 24">
                             <path d="M7 10l5 5 5-5z"/>
@@ -368,8 +370,8 @@
                 <div class="accordion-content">
                     <div class="accordion-content-inner">
                         <ul>
-                            <li><strong>Outage HFC:</strong> usar horário do IDS.</li>
-                            <li><strong>Outage GPON:</strong> usar horário da primeira fusão.</li>
+                            <li><strong>Incidente HFC:</strong> usar horário do IDS.</li>
+                            <li><strong>Incidente GPON:</strong> usar horário da primeira fusão.</li>
                         </ul>
                     </div>
                 </div>
@@ -394,7 +396,7 @@
                                 <li>≥ 300 naps</li>
                             </ul>
                         </div>
-                        <p>Deve constar na primeira mensagem de atualização e no outage.</p>
+                        <p>O escalonamento deve constar na primeira mensagem de atualização e no respectivo incidente.</p>
                     </div>
                 </div>
             </div>
@@ -431,7 +433,7 @@
                         <h3>Observações:</h3>
                         <ul>
                             <li>Impactos ≥ 10 nodes ou 300 naps → escalonamento imediato.</li>
-                            <li>Mensagens devem ser enviadas mesmo que o turno anterior tenha enviado.</li>
+                            <li>As mensagens devem ser enviadas mesmo que o turno anterior não as tenham enviado.</li>
                         </ul>
                     </div>
                 </div>
@@ -440,7 +442,7 @@
             <!-- Acordeão 6 -->
             <div class="accordion-item">
                 <button class="accordion-header" aria-expanded="false">
-                    <span class="accordion-title">6. Cancelamento de Tarefas</span>
+                    <span class="accordion-title">6. Cancelamento de tarefas</span>
                     <div class="accordion-icon">
                         <svg viewBox="0 0 24 24">
                             <path d="M7 10l5 5 5-5z"/>
@@ -451,7 +453,7 @@
                     <div class="accordion-content-inner">
                         <p><strong>Só cancelar quando:</strong></p>
                         <ul>
-                            <li><strong>1.</strong> Erro do COP ao criar a tarefa.</li>
+                            <li><strong>1.</strong> Houver erro do COP ao criar a tarefa.</li>
                             <li><strong>2.</strong> Incidente normalizado sem intervenção e o técnico ainda não iniciou a tarefa. Se iniciou: não cancelar.</li>
                         </ul>
                     </div>
@@ -461,7 +463,7 @@
             <!-- Acordeão 7 -->
             <div class="accordion-item">
                 <button class="accordion-header" aria-expanded="false">
-                    <span class="accordion-title">7. Incidentes "Toda Praça"</span>
+                    <span class="accordion-title">7. Incidentes: Toda Praça</span>
                     <div class="accordion-icon">
                         <svg viewBox="0 0 24 24">
                             <path d="M7 10l5 5 5-5z"/>
@@ -500,7 +502,8 @@
         </div>
 
         <footer>
-            <p>📄 Guia de Procedimentos ETIT | Última atualização: 2025</p>
+            <p>📄 Guia de Procedimentos | Última atualização: 2025</p>
+            <p style="margin-top: 10px; font-size: 0.9em;">Desenvolvido por N5923221</p>
         </footer>
     </div>
 
