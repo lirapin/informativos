@@ -332,16 +332,18 @@
                 </button>
                 <div class="accordion-content">
                     <div class="accordion-content-inner">
-                        <h3>Abrangência:</h3>
-                        <p><strong>Outage HFC:</strong> iserir uma evidência pode node do xpt.</p>
-                        <p><strong>Outage GPON:</strong> incluir o gráfico do visium.</p>
+                           <h3>Abrangência e evidências</h3>
 
-                        <h3>Evidências:</h3>
-                        <p>As evidências devem conter horário de normalização.</p>
-                        <p>Se o sistema estiver inoperante, insera uma evidência do erro.</p>                       
-                        <p>Qualquer evidência será aceita caso as ferramentas oficiais estejam inoperantes.</p>
-                        <p>É obrigatótio inserir evidência da calculadora IDS para os casos de incidentes HFC.</p>
-                        <p>Conferir se todas as evidências foram devidamente inseridas antes de encerrar o incidente.</p>
+                         <div class="highlight-box">
+                        <p><strong>Outage HFC:</strong> iserir uma evidência por node utilizando o xpt.</p>
+                        <p><strong>Outage GPON:</strong> incluir o gráfico do visium.</p>
+                    </div>                                        
+
+                        <p>1. As evidências devem conter horário de normalização.</p>
+                        <p>2. Se o sistema estiver inoperante, insira uma evidência do erro.</p>                       
+                        <p>3. Qualquer evidência será aceita caso as ferramentas oficiais estejam inoperantes.</p>
+                        <p>4. É obrigatótio inserir evidência da calculadora IDS para os casos de incidentes HFC.</p>
+                        <p>5. Conferir se todas as evidências foram devidamente inseridas antes de encerrar o incidente.</p>
                         
                     </div>
                 </div>
@@ -359,8 +361,8 @@
                 </button>
                 <div class="accordion-content">
                     <div class="accordion-content-inner">
-                        <p><strong>Outage HFC:</strong> sempre usar o horário do IDS.</p>
-                        <p><strong>Outage GPON:</strong> sempre usar horário da primeira fusão.</p>
+                        <p><strong>Incidentes HFC:</strong> sempre usar o horário do IDS.</p>
+                        <p><strong>Incidentes GPON:</strong> sempre usar horário da primeira fusão.</p>
                     </div>
                 </div>
             </div>
@@ -379,10 +381,10 @@
                     <div class="accordion-content-inner">
                         <div class="highlight-box">
                             <p><strong>O escalonamento deve ser imediato quando:</strong></p>
-                            <p>≥ 10 nodes ou</p>
-                            <p>≥ 300 naps</p>
+                            <p>≥ 10 nodes ou ≥ 300 naps</p>
                         </div>
-                        <p>Deve constar na primeira mensagem de atualização e no outage.</p>
+                        <p>O escalonamento deve constar na primeira mensagem e no incidente.</p>
+                        <p>O escalonamento deve ser completo: supervisor, coordenador e gerente.</p>
                     </div>
                 </div>
             </div>
@@ -413,7 +415,6 @@
                         <p><strong>HFC:</strong> acima de 5 nodes.</p>
 
                         <h3>Observações:</h3>
-                        <p>Impactos ≥ 10 nodes ou 300 naps → escalonamento imediato.</p>
                         <p>As ensagens devem ser enviadas mesmo que o turno anterior não as tenham enviado.</p>
                     </div>
                 </div>
@@ -441,7 +442,7 @@
             <!-- Acordeão 7 -->
             <div class="accordion-item">
                 <button class="accordion-header" aria-expanded="false">
-                    <span class="accordion-title">7. Incidentes "Toda Praça"</span>
+                    <span class="accordion-title">7. Incidentes: Toda Praça</span>
                     <div class="accordion-icon">
                         <svg viewBox="0 0 24 24">
                             <path d="M7 10l5 5 5-5z"/>
@@ -450,8 +451,8 @@
                 </button>
                 <div class="accordion-content">
                     <div class="accordion-content-inner">
-                        <p>Todo incidente Toda Praça deve ser analisado pela equipe COP.</p>
-                        <p>O escalonamento é responsabilidade do COP, independente de quem abriu.</p>
+                        <p>Todo incidente "Toda Praça" deve ser analisado pela equipe COP.</p>
+                        <p>O escalonamento é de responsabilidade do COP, independente de quem abriu o incidente.</p>
                     </div>
                 </div>
             </div>
@@ -468,7 +469,7 @@
                 </button>
                 <div class="accordion-content">
                     <div class="accordion-content-inner">
-                        <p>Identificar horário aproximado para tratamento e encerramento.</p>
+                        <p>Identificar horário aproximado para tratamento e possível encerramento.</p>
                         <p>Caso não seja possível estimar, reprogramar para o dia seguinte após 15h.</p>
                     </div>
                 </div>
