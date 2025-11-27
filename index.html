@@ -1,1 +1,552 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia ETIT - Procedimentos Operacionais</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        :root {
+            --verde-principal: #86c788;
+            --verde-claro: #a8d5a2;
+            --verde-muito-claro: #dff2dd;
+            --verde-hover: #6eb070;
+            --verde-escuro: #4a7c4e;
+            --texto-escuro: #2d4a2f;
+            --texto-medio: #4a5f4c;
+            --branco: #ffffff;
+            --cinza-claro: #f8faf9;
+            --sombra: rgba(70, 100, 70, 0.1);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--verde-muito-claro) 0%, var(--branco) 100%);
+            color: var(--texto-escuro);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 30px 20px;
+            background: var(--branco);
+            border-radius: 20px;
+            box-shadow: 0 4px 20px var(--sombra);
+        }
+
+        h1 {
+            color: var(--verde-escuro);
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            color: var(--texto-medio);
+            font-size: 1.1em;
+            font-weight: 400;
+        }
+
+        .accordion-container {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+
+        .accordion-item {
+            background: var(--branco);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 2px 12px var(--sombra);
+            transition: all 0.3s ease;
+        }
+
+        .accordion-item:hover {
+            box-shadow: 0 4px 20px rgba(70, 100, 70, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .accordion-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 28px;
+            cursor: pointer;
+            background: var(--verde-muito-claro);
+            user-select: none;
+            transition: all 0.3s ease;
+            border: none;
+            width: 100%;
+            text-align: left;
+        }
+
+        .accordion-header:hover {
+            background: var(--verde-claro);
+        }
+
+        .accordion-header.active {
+            background: var(--verde-principal);
+        }
+
+        .accordion-title {
+            font-size: 1.25em;
+            font-weight: 600;
+            color: var(--verde-escuro);
+            flex: 1;
+            transition: color 0.3s ease;
+        }
+
+        .accordion-header.active .accordion-title {
+            color: var(--branco);
+        }
+
+        .accordion-icon {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--branco);
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+            margin-left: 16px;
+        }
+
+        .accordion-icon svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--verde-principal);
+            transition: fill 0.3s ease;
+        }
+
+        .accordion-header.active .accordion-icon {
+            transform: rotate(180deg);
+            background: var(--branco);
+        }
+
+        .accordion-header.active .accordion-icon svg {
+            fill: var(--verde-principal);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+            background: var(--branco);
+        }
+
+        .accordion-content.active {
+            max-height: 3000px;
+            padding: 28px;
+            border-top: 2px solid var(--verde-muito-claro);
+        }
+
+        .accordion-content-inner {
+            color: var(--texto-medio);
+            font-size: 1.05em;
+            line-height: 1.8;
+        }
+
+        .accordion-content-inner h3 {
+            color: var(--verde-escuro);
+            font-size: 1.2em;
+            margin: 20px 0 12px 0;
+            font-weight: 600;
+        }
+
+        .accordion-content-inner h3:first-child {
+            margin-top: 0;
+        }
+
+        .accordion-content-inner ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 12px 0;
+        }
+
+        .accordion-content-inner li {
+            padding: 10px 0 10px 32px;
+            position: relative;
+            line-height: 1.7;
+        }
+
+        .accordion-content-inner li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--verde-principal);
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .accordion-content-inner strong {
+            color: var(--verde-escuro);
+            font-weight: 600;
+        }
+
+        .accordion-content-inner a {
+            color: var(--verde-principal);
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+
+        .accordion-content-inner a:hover {
+            border-bottom-color: var(--verde-principal);
+        }
+
+        .highlight-box {
+            background: var(--verde-muito-claro);
+            border-left: 4px solid var(--verde-principal);
+            padding: 16px 20px;
+            margin: 16px 0;
+            border-radius: 8px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: var(--texto-medio);
+            font-size: 0.95em;
+            background: var(--branco);
+            border-radius: 16px;
+            box-shadow: 0 2px 12px var(--sombra);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .subtitle {
+                font-size: 1em;
+            }
+
+            .accordion-header {
+                padding: 20px;
+            }
+
+            .accordion-title {
+                font-size: 1.1em;
+            }
+
+            .accordion-content.active {
+                padding: 20px;
+            }
+
+            .accordion-icon {
+                width: 28px;
+                height: 28px;
+            }
+
+            .accordion-icon svg {
+                width: 16px;
+                height: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+
+            .container {
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 1.6em;
+            }
+
+            .accordion-header {
+                padding: 16px;
+            }
+
+            .accordion-title {
+                font-size: 1em;
+            }
+
+            .accordion-content-inner {
+                font-size: 1em;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📋 Guia ETIT</h1>
+            <p class="subtitle">Procedimentos Operacionais e Diretrizes</p>
+        </header>
+
+        <div class="accordion-container">
+            <!-- Acordeão 1 -->
+            <div class="accordion-item">
+                <button class="accordion-header" aria-expanded="false">
+                    <span class="accordion-title">1. ETIT – Regras de Tempo</span>
+                    <div class="accordion-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M7 10l5 5 5-5z"/>
+                        </svg>
+                    </div>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-content-inner">
+                        <ul>
+                            <li><strong>Casos SS:</strong> gerar a tarefa do incidente em até 15 minutos.</li>
+                            <li><strong>Casos de degradação:</strong> gerar em até 30 minutos.</li>
+                            <li>Independente de acionamento.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Acordeão 2 -->
+            <div class="accordion-item">
+                <button class="accordion-header" aria-expanded="false">
+                    <span class="accordion-title">2. Abrangência e Evidências dos Tickets</span>
+                    <div class="accordion-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M7 10l5 5 5-5z"/>
+                        </svg>
+                    </div>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-content-inner">
+                        <h3>Abrangência:</h3>
+                        <ul>
+                            <li><strong>Outage HFC:</strong> pelo menos uma abrangência por node (preferencialmente XPT).</li>
+                            <li><strong>Outage GPON:</strong> incluir gráfico do Visium.</li>
+                        </ul>
+
+                        <h3>Evidências:</h3>
+                        <ul>
+                            <li>Evidências devem ter horário.</li>
+                            <li>Se o sistema estiver fora, inserir print do erro.</li>
+                            <li><strong>Casos HFC:</strong> obrigatório incluir evidência do IDS.</li>
+                            <li>Qualquer evidência é aceita caso as ferramentas estejam inoperantes.</li>
+                            <li>Conferir todas as evidências antes de encerrar.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Acordeão 3 -->
+            <div class="accordion-item">
+                <button class="accordion-header" aria-expanded="false">
+                    <span class="accordion-title">3. Horário de Encerramento</span>
+                    <div class="accordion-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M7 10l5 5 5-5z"/>
+                        </svg>
+                    </div>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-content-inner">
+                        <ul>
+                            <li><strong>Outage HFC:</strong> usar horário do IDS.</li>
+                            <li><strong>Outage GPON:</strong> usar horário da primeira fusão.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Acordeão 4 -->
+            <div class="accordion-item">
+                <button class="accordion-header" aria-expanded="false">
+                    <span class="accordion-title">4. Escalonamentos</span>
+                    <div class="accordion-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M7 10l5 5 5-5z"/>
+                        </svg>
+                    </div>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-content-inner">
+                        <div class="highlight-box">
+                            <strong>Escalonamento imediato quando:</strong>
+                            <ul>
+                                <li>≥ 10 nodes ou</li>
+                                <li>≥ 300 naps</li>
+                            </ul>
+                        </div>
+                        <p>Deve constar na primeira mensagem de atualização e no outage.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Acordeão 5 -->
+            <div class="accordion-item">
+                <button class="accordion-header" aria-expanded="false">
+                    <span class="accordion-title">5. Mensagens</span>
+                    <div class="accordion-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M7 10l5 5 5-5z"/>
+                        </svg>
+                    </div>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-content-inner">
+                        <div class="highlight-box">
+                            <strong>É obrigatório gerar as mensagens exclusivamente pelo gerador oficial:</strong><br>
+                            <a href="https://lirapin.github.io/gerador-de-mensagens/" target="_blank" rel="noopener noreferrer">https://lirapin.github.io/gerador-de-mensagens/</a>
+                        </div>
+
+                        <h3>Rio de Janeiro:</h3>
+                        <ul>
+                            <li><strong>GPON:</strong> acima de 10 naps.</li>
+                            <li><strong>HFC:</strong> acima de 3 nodes.</li>
+                        </ul>
+
+                        <h3>Cidades da Leste:</h3>
+                        <ul>
+                            <li><strong>GPON:</strong> acima de 10 naps.</li>
+                            <li><strong>HFC:</strong> acima de 5 nodes.</li>
+                        </ul>
+
+                        <h3>Observações:</h3>
+                        <ul>
+                            <li>Impactos ≥ 10 nodes ou 300 naps → escalonamento imediato.</li>
+                            <li>Mensagens devem ser enviadas mesmo que o turno anterior tenha enviado.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Acordeão 6 -->
+            <div class="accordion-item">
+                <button class="accordion-header" aria-expanded="false">
+                    <span class="accordion-title">6. Cancelamento de Tarefas</span>
+                    <div class="accordion-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M7 10l5 5 5-5z"/>
+                        </svg>
+                    </div>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-content-inner">
+                        <p><strong>Só cancelar quando:</strong></p>
+                        <ul>
+                            <li><strong>1.</strong> Erro do COP ao criar a tarefa.</li>
+                            <li><strong>2.</strong> Incidente normalizado sem intervenção e o técnico ainda não iniciou a tarefa. Se iniciou: não cancelar.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Acordeão 7 -->
+            <div class="accordion-item">
+                <button class="accordion-header" aria-expanded="false">
+                    <span class="accordion-title">7. Incidentes "Toda Praça"</span>
+                    <div class="accordion-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M7 10l5 5 5-5z"/>
+                        </svg>
+                    </div>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-content-inner">
+                        <ul>
+                            <li>Todo incidente Toda Praça deve ser analisado pela equipe.</li>
+                            <li>O escalonamento é responsabilidade da equipe, independente de quem abriu.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Acordeão 8 -->
+            <div class="accordion-item">
+                <button class="accordion-header" aria-expanded="false">
+                    <span class="accordion-title">8. Reprogramação</span>
+                    <div class="accordion-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M7 10l5 5 5-5z"/>
+                        </svg>
+                    </div>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-content-inner">
+                        <ul>
+                            <li>Identificar horário aproximado para tratamento e encerramento.</li>
+                            <li>Caso não seja possível estimar, reprogramar para o dia seguinte após 15h.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>📄 Guia de Procedimentos ETIT | Última atualização: 2025</p>
+        </footer>
+    </div>
+
+    <script>
+        // Seleciona todos os headers de acordeão
+        const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+        accordionHeaders.forEach(header => {
+            header.addEventListener('click', () => {
+                // Pega o item pai do acordeão
+                const accordionItem = header.parentElement;
+                const accordionContent = accordionItem.querySelector('.accordion-content');
+                const isActive = header.classList.contains('active');
+
+                // Toggle do acordeão atual
+                if (isActive) {
+                    header.classList.remove('active');
+                    accordionContent.classList.remove('active');
+                    header.setAttribute('aria-expanded', 'false');
+                } else {
+                    header.classList.add('active');
+                    accordionContent.classList.add('active');
+                    header.setAttribute('aria-expanded', 'true');
+                }
+            });
+
+            // Adiciona suporte para teclado (acessibilidade)
+            header.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    header.click();
+                }
+            });
+        });
+
+        // Fecha acordeões ao pressionar ESC (opcional, melhora UX)
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                accordionHeaders.forEach(header => {
+                    header.classList.remove('active');
+                    const accordionContent = header.parentElement.querySelector('.accordion-content');
+                    accordionContent.classList.remove('active');
+                    header.setAttribute('aria-expanded', 'false');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
