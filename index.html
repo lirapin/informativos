@@ -293,14 +293,14 @@
     <div class="container">
         <header>
             <h1>📋 Guia de processos</h1>
-            <p class="subtitle">Procedimentos Operacionais e Diretrizes</p>
+            <p class="subtitle">Procedimentos operacionais e diretrizes</p>
         </header>
 
         <div class="accordion-container">
             <!-- Acordeão 1 -->
             <div class="accordion-item">
                 <button class="accordion-header" aria-expanded="false">
-                    <span class="accordion-title">1. ETIT – Regras de Tempo</span>
+                    <span class="accordion-title">1. ETIT – Regras de tempo</span>
                     <div class="accordion-icon">
                         <svg viewBox="0 0 24 24">
                             <path d="M7 10l5 5 5-5z"/>
@@ -308,10 +308,14 @@
                     </div>
                 </button>
                 <div class="accordion-content">
+
+                    <div class="highlight-box">
+                         <p><strong>Casos de sem sinal:</strong> gerar a tarefa do incidente em até 15 minutos.</p>
+                        <p><strong>Casos de degradação:</strong> gerar a tarefa do incidente em até 30 minutos.</p>
+                    </div>
+                    
                     <div class="accordion-content-inner">
-                        <p><strong>Casos SS:</strong> gerar a tarefa do incidente em até 15 minutos.</p>
-                        <p><strong>Casos de degradação:</strong> gerar em até 30 minutos.</p>
-                        <p>Independente de acionamento.</p>
+                        <p>A garantia do etit independe de acionamento. Para garantir o etit basta que seja gerado no prazo.</p>
                     </div>
                 </div>
             </div>
@@ -319,7 +323,7 @@
             <!-- Acordeão 2 -->
             <div class="accordion-item">
                 <button class="accordion-header" aria-expanded="false">
-                    <span class="accordion-title">2. Abrangência e Evidências dos Tickets</span>
+                    <span class="accordion-title">2. Abrangência e evidências dos incidentes</span>
                     <div class="accordion-icon">
                         <svg viewBox="0 0 24 24">
                             <path d="M7 10l5 5 5-5z"/>
@@ -329,15 +333,16 @@
                 <div class="accordion-content">
                     <div class="accordion-content-inner">
                         <h3>Abrangência:</h3>
-                        <p><strong>Outage HFC:</strong> pelo menos uma abrangência por node (preferencialmente XPT).</p>
-                        <p><strong>Outage GPON:</strong> incluir gráfico do Visium.</p>
+                        <p><strong>Outage HFC:</strong> iserir uma evidência pode node do xpt.</p>
+                        <p><strong>Outage GPON:</strong> incluir o gráfico do visium.</p>
 
                         <h3>Evidências:</h3>
-                        <p>Evidências devem ter horário.</p>
-                        <p>Se o sistema estiver fora, inserir print do erro.</p>
-                        <p><strong>Casos HFC:</strong> obrigatório incluir evidência do IDS.</p>
-                        <p>Qualquer evidência é aceita caso as ferramentas estejam inoperantes.</p>
-                        <p>Conferir todas as evidências antes de encerrar.</p>
+                        <p>As evidências devem conter horário de normalização.</p>
+                        <p>Se o sistema estiver inoperante, insera uma evidência do erro.</p>                       
+                        <p>Qualquer evidência será aceita caso as ferramentas oficiais estejam inoperantes.</p>
+                        <p>É obrigatótio inserir evidência da calculadora IDS para os casos de incidentes HFC.</p>
+                        <p>Conferir se todas as evidências foram devidamente inseridas antes de encerrar o incidente.</p>
+                        
                     </div>
                 </div>
             </div>
@@ -345,7 +350,7 @@
             <!-- Acordeão 3 -->
             <div class="accordion-item">
                 <button class="accordion-header" aria-expanded="false">
-                    <span class="accordion-title">3. Horário de Encerramento</span>
+                    <span class="accordion-title">3. Horário de encerramento</span>
                     <div class="accordion-icon">
                         <svg viewBox="0 0 24 24">
                             <path d="M7 10l5 5 5-5z"/>
@@ -354,8 +359,8 @@
                 </button>
                 <div class="accordion-content">
                     <div class="accordion-content-inner">
-                        <p><strong>Outage HFC:</strong> usar horário do IDS.</p>
-                        <p><strong>Outage GPON:</strong> usar horário da primeira fusão.</p>
+                        <p><strong>Outage HFC:</strong> sempre usar o horário do IDS.</p>
+                        <p><strong>Outage GPON:</strong> sempre usar horário da primeira fusão.</p>
                     </div>
                 </div>
             </div>
@@ -373,7 +378,7 @@
                 <div class="accordion-content">
                     <div class="accordion-content-inner">
                         <div class="highlight-box">
-                            <p><strong>Escalonamento imediato quando:</strong></p>
+                            <p><strong>O escalonamento deve ser imediato quando:</strong></p>
                             <p>≥ 10 nodes ou</p>
                             <p>≥ 300 naps</p>
                         </div>
@@ -409,7 +414,7 @@
 
                         <h3>Observações:</h3>
                         <p>Impactos ≥ 10 nodes ou 300 naps → escalonamento imediato.</p>
-                        <p>Mensagens devem ser enviadas mesmo que o turno anterior tenha enviado.</p>
+                        <p>As ensagens devem ser enviadas mesmo que o turno anterior não as tenham enviado.</p>
                     </div>
                 </div>
             </div>
@@ -417,7 +422,7 @@
             <!-- Acordeão 6 -->
             <div class="accordion-item">
                 <button class="accordion-header" aria-expanded="false">
-                    <span class="accordion-title">6. Cancelamento de Tarefas</span>
+                    <span class="accordion-title">6. Cancelamento de tarefas</span>
                     <div class="accordion-icon">
                         <svg viewBox="0 0 24 24">
                             <path d="M7 10l5 5 5-5z"/>
@@ -427,8 +432,8 @@
                 <div class="accordion-content">
                     <div class="accordion-content-inner">
                         <p><strong>Só cancelar quando:</strong></p>
-                        <p><strong>1.</strong> Erro do COP ao criar a tarefa.</p>
-                        <p><strong>2.</strong> Incidente normalizado sem intervenção e o técnico ainda não iniciou a tarefa. Se iniciou: não cancelar.</p>
+                        <p><strong>1.</strong> Houver erro do COP ao criar a tarefa.</p>
+                        <p><strong>2.</strong> Incidente normalizado sem intervenção e o técnico ainda não tiver iniciado a tarefa. Se iniciou: não cancelar.</p>
                     </div>
                 </div>
             </div>
@@ -445,8 +450,8 @@
                 </button>
                 <div class="accordion-content">
                     <div class="accordion-content-inner">
-                        <p>Todo incidente Toda Praça deve ser analisado pela equipe.</p>
-                        <p>O escalonamento é responsabilidade da equipe, independente de quem abriu.</p>
+                        <p>Todo incidente Toda Praça deve ser analisado pela equipe COP.</p>
+                        <p>O escalonamento é responsabilidade do COP, independente de quem abriu.</p>
                     </div>
                 </div>
             </div>
@@ -471,7 +476,7 @@
         </div>
 
         <footer>
-            <p>📄 Guia de Procedimentos ETIT | Última atualização: 2025</p>
+            <p>📄 Guia de procedimentos | Última atualização: 2025</p>
             <p style="margin-top: 10px; font-size: 0.9em;">Desenvolvido por N5923221</p>
         </footer>
     </div>
