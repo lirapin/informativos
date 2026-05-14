@@ -78,7 +78,7 @@
         h1 {
             color: #202020;
             font-size: clamp(2rem, 4vw, 3.05rem);
-            font-weight: 800;
+            font-weight: 400;
             letter-spacing: 0;
         }
 
@@ -192,7 +192,7 @@
             flex: 1;
             padding-right: 14px;
             font-size: 1rem;
-            font-weight: 700;
+            font-weight: 400;
             line-height: 1.3;
         }
 
@@ -242,12 +242,12 @@
 
         .accordion-content-inner strong {
             color: var(--texto);
-            font-weight: 700;
+            font-weight: inherit;
         }
 
         .accordion-content-inner a {
             color: var(--vermelho);
-            font-weight: 700;
+            font-weight: 400;
             text-decoration: none;
             border-bottom: 1px solid rgba(185, 28, 28, 0.35);
         }
@@ -373,11 +373,11 @@
                         <div class="accordion-content">
                             <div class="accordion-content-inner">
                                 <div class="highlight-box">
-                                    <p><strong>HFC FO/GPON:</strong></p>
-                                    <p><strong>Incidentes de sem sinal:</strong> gerar a tarefa do incidente em at&eacute; 15 minutos.</p>
-                                    <p><strong>Incidentes de degrada&ccedil;&atilde;o:</strong> gerar a tarefa do incidente em at&eacute; 30 minutos.</p>
+                                    <p>HFC FO/GPON:</p>
+                                    <p>Incidentes de sem sinal: gerar a tarefa do incidente em at&eacute; 15 minutos.</p>
+                                    <p>Incidentes de degrada&ccedil;&atilde;o: gerar a tarefa do incidente em at&eacute; 30 minutos.</p>
                                 </div>
-                                <p><strong>Observa&ccedil;&atilde;o:</strong> Para os casos HFC FO o tempo come&ccedil;a a contar a partir do momento em que o ticket for enviado pela BCC! &#9888;&#65039;</p>
+                                <p>Observa&ccedil;&atilde;o: Para os casos HFC FO o tempo come&ccedil;a a contar a partir do momento em que o ticket for enviado pela BCC! &#9888;&#65039;</p>
                             </div>
                         </div>
                     </div>
@@ -394,8 +394,8 @@
                         <div class="accordion-content">
                             <div class="accordion-content-inner">
                                 <div class="highlight-box">
-                                    <p><strong>Incidente HFC:</strong> inserir uma evid&ecirc;ncia por node utilizando o xpt.</p>
-                                    <p><strong>Incidente GPON:</strong> incluir o gr&aacute;fico do visium.</p>
+                                    <p>Incidente HFC: inserir uma evid&ecirc;ncia por node utilizando o xpt.</p>
+                                    <p>Incidente GPON: incluir o gr&aacute;fico do visium.</p>
                                 </div>
                                 <p>1. As evid&ecirc;ncias devem conter hor&aacute;rio de normaliza&ccedil;&atilde;o.</p>
                                 <p>2. Se o sistema estiver inoperante, insira uma evid&ecirc;ncia do erro.</p>
@@ -417,8 +417,8 @@
                         </button>
                         <div class="accordion-content">
                             <div class="accordion-content-inner">
-                                <p><strong>Incidentes HFC:</strong> sempre usar o hor&aacute;rio do IDS.</p>
-                                <p><strong>Incidentes GPON:</strong> sempre usar hor&aacute;rio da primeira fus&atilde;o.</p>
+                                <p>Incidentes HFC: sempre usar o hor&aacute;rio do IDS.</p>
+                                <p>Incidentes GPON: sempre usar hor&aacute;rio da primeira fus&atilde;o.</p>
                             </div>
                         </div>
                     </div>
@@ -435,7 +435,7 @@
                         <div class="accordion-content">
                             <div class="accordion-content-inner">
                                 <div class="highlight-box">
-                                    <p><strong>O escalonamento deve ser imediato quando:</strong></p>
+                                    <p>O escalonamento deve ser imediato quando:</p>
                                     <p>&ge; 10 nodes ou &ge; 300 naps</p>
                                 </div>
                                 <p>1. O escalonamento deve constar na primeira mensagem e no incidente.</p>
@@ -458,16 +458,16 @@
                         <div class="accordion-content">
                             <div class="accordion-content-inner">
                                 <div class="highlight-box">
-                                    <strong>&Eacute; obrigat&oacute;rio gerar as mensagens exclusivamente pelo gerador oficial:</strong><br>
+                                    &Eacute; obrigat&oacute;rio gerar as mensagens exclusivamente pelo gerador oficial:<br>
                                     <a href="https://lirapin.github.io/gerador-de-mensagens/" target="_blank" rel="noopener noreferrer">Gerador de mensagens</a>
                                 </div>
-                                <p><strong>Cidades da Leste</strong></p>
-                                <p><strong>GPON:</strong> acima de 10 naps.</p>
-                                <p><strong>HFC:</strong> acima de 5 nodes.</p>
-                                <p><strong>Cidade do Rio de Janeiro</strong></p>
-                                <p><strong>GPON:</strong> acima de 10 naps.</p>
-                                <p><strong>HFC:</strong> acima de 3 nodes.</p>
-                                <p><strong>Observa&ccedil;&otilde;es</strong></p>
+                                <p>Cidades da Leste</p>
+                                <p>GPON: acima de 10 naps.</p>
+                                <p>HFC: acima de 5 nodes.</p>
+                                <p>Cidade do Rio de Janeiro</p>
+                                <p>GPON: acima de 10 naps.</p>
+                                <p>HFC: acima de 3 nodes.</p>
+                                <p>Observa&ccedil;&otilde;es</p>
                                 <p>As mensagens devem ser enviadas mesmo que o turno anterior n&atilde;o as tenha enviado.</p>
                             </div>
                         </div>
@@ -538,9 +538,9 @@
                         <div class="accordion-content">
                             <div class="accordion-content-inner">
                                 <div class="highlight-box">
-                                    <p><strong>Os acionamentos s&atilde;o efetuados atrav&eacute;s do TOA.</strong></p>
+                                    <p>Os acionamentos s&atilde;o efetuados atrav&eacute;s do TOA.</p>
                                 </div>
-                                <p><strong>Aten&ccedil;&atilde;o:</strong> Em cidades cujo plant&atilde;o for sobreaviso, &eacute; necess&aacute;rio fazer o acionamento via voz.</p>
+                                <p>Aten&ccedil;&atilde;o: Em cidades cujo plant&atilde;o for sobreaviso, &eacute; necess&aacute;rio fazer o acionamento via voz.</p>
                                 <p>N&atilde;o se esque&ccedil;am de filtrar no TOA, na op&ccedil;&atilde;o &ldquo;Ver&rdquo;, e marcar a caixa &ldquo;Exibir plant&atilde;o&rdquo;.</p>
                             </div>
                         </div>
@@ -568,7 +568,7 @@
         </main>
 
         <footer>
-            <p>Desenvolvido por N5923221.</p>
+            <p>Desenvolvido por N5923221</p>
         </footer>
     </div>
 
@@ -603,6 +603,11 @@
                 if (header.classList.contains("active")) {
                     closeAccordion(header);
                 } else {
+                    accordionHeaders.forEach((otherHeader) => {
+                        if (otherHeader !== header) {
+                            closeAccordion(otherHeader);
+                        }
+                    });
                     openAccordion(header);
                 }
             });
@@ -620,11 +625,7 @@
                     visibleCount += 1;
                 }
 
-                if (query.length > 0 && matches) {
-                    openAccordion(item.querySelector(".accordion-header"));
-                } else {
-                    closeAccordion(item.querySelector(".accordion-header"));
-                }
+                closeAccordion(item.querySelector(".accordion-header"));
             });
 
             emptyState.classList.toggle("visible", visibleCount === 0);
